@@ -1,0 +1,199 @@
+<!doctype html>
+<html >
+    <!--CSS-->
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 50px 50px 100px;
+            background-color: blue;
+            border: solid 2px black;
+        }
+        .grid-item {
+            background-color: white;
+            color:black;
+            text-align: center;
+            margin: 2px;
+        }
+        #IIR, #inlineImageRight{
+         height: 200px;
+         width: 300px;
+         float:right;
+         display: inline;
+         border: solid 2px;
+         border-radius: 50px;
+         margin:0 10% 0 -50%;
+        }
+        #IIL, #inlineImageLeft{
+         height: 200px;
+         width: 300px;
+         float:left;
+         display: inline;
+         border: solid 2px;
+         border-radius: 100px;
+         margin:0 -50% 0 10%;
+        }
+        #circleImg {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          height: 100px;
+          width: 100px;
+          border-radius: 100px;
+          border: solid 5px;
+          display: inline-block;
+        }
+        form{ 
+            display: inline-block; 
+            }
+        h1 {
+            font-size: 60px;
+            border: solid 1px red;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 0 100px 0 100px;
+            text-align: center;
+            background-color: white;
+            color: black;
+            padding:0 20px 0 30px;
+        }
+        h2 {
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button {
+            font-size: 20px;
+            font-family:cursive;
+            background: linear-gradient(140deg,white,white,black);
+            margin:10px;
+            border-radius: 100px;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20px;
+        }
+        .centerVideo {
+            margin: 0 auto;
+        }
+        p{  
+            border-radius: 10px;
+            color: darkmagenta;
+            font-style:italic;
+            font-size: 0.5cm;
+        }
+        body{
+            background-color:deepskyblue;
+            background: linear-gradient(-30deg,black,white,black);
+            padding: 0 0 300px 0; 
+        }
+        div{
+            margin:10px;
+            padding:10px;
+            color:black;
+            display:block;
+        }
+        .containerH {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;    
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .item {  
+            margin:0cm;
+        }
+        #head-background-doges{
+            background:url('https://cdn.vanderbilt.edu/vu-web/insidedores-wpcontent/20190412155028/doge-pattern-27481-2880x1800.jpg');
+        }
+        #head-background-rainbow {
+            background:url('https://i.pinimg.com/originals/2d/19/fc/2d19fc5be39f7fc7349a8df489b1974f.jpg');
+        }
+        #background-BWChaos {
+            background: url('https://image.shutterstock.com/image-illustration/art-abstract-black-white-chaos-600w-145922732.jpg');
+        }
+        #PinkToRed {
+            background: linear-gradient(120deg,pink,red);
+        }
+        #WhiteToPurple {
+            background: linear-gradient(120deg,white,purple);
+        }
+        #WhiteToBlack {
+            background: linear-gradient(140deg,white,white,black);  
+        }
+    </style>
+    <!--HTML-->
+    <body align=center>
+        
+        <head>
+            <title>Haowei's Webpage</title>
+        </head> 
+        <br>
+        <h1 id="background-BWChaos" style = "display: inline;color:red;border: solid white 5px;">My Webpage </h1>
+        <h2 id="clock" style="margin-top: 10px;margin-bottom: -40px;"></h2>
+        <script src="./clock.js"></script>
+        <img id = "IIL" style = "height:200px; width: 200px; border-radius: 100px;margin-top:1.5cm;margin-left:8.5cm;" src = "https://i.pinimg.com/736x/1e/a5/2b/1ea52bcfbd326891a5249e9bc1d4113b.jpg">
+        <br>
+        <!--popular link-->
+        <h2>Popular Links</h2>
+        <form action="schedule2021Fall.png" target="_blank">
+            <button  style="margin:10px;" type="submit" ><h3>Class Schedule</h3></button> 
+        </form>
+        <img id="IIR" src = "https://cyberbullying.org/wp-content/uploads/2016/10/league-of-legends-wallpaper-e1478011147165.jpg">
+        <br> 
+        <img id = "IIL" style="margin-left: 5%;" src = "https://cdn.vox-cdn.com/thumbor/jquAragsr1W9FlZEaX0RRkRBlpk=/0x0:1440x1080/1200x800/filters:focal(605x425:835x655)/cdn.vox-cdn.com/uploads/chorus_image/image/67355741/Egg1ZhEUYAAPasN.0.jpg">
+        <div class="containerH">
+            <div class="container">
+                <div class = "item">
+                    <form action="https://www.youtube.com/" target="_blank">
+                        <button  type="submit" class="item">YouTube</button> 
+                    </form>
+                </div>
+                <div class = "item">
+                    <form action="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+                        <button  type="submit" class="item" >Gmail</button> 
+                    </form>
+                </div>
+                <div class = "item">
+                    <form action = "https://www.bu.edu/link/bin/uiscgi_studentlink.pl/uismpl/?ModuleName=menu.pl&NewMenu=Home" target="_blank">
+                        <button  type="submit" class="item">StudentLink</button>
+                    </form>
+                </div>
+                <div class = "item">
+                    <form action = "https://learn.bu.edu/ultra" target="_blank">
+                        <button  type="submit" class="item">BlackBoard</button>
+                    </form>           
+                </div>
+            </div>
+            <div class="container">
+                <div class = "item">
+                    <form action = "https://www.gradescope.com/" target="_blank">
+                        <button  type="submit" class="item">Gradescope</button>
+                    </form>
+                </div>
+                <div class = "item">2   
+                </div>
+                <div class = "item">3</div>
+                <div class = "item">4</div>
+            </div>
+        </div>
+        <img id = "IIR" style = "display:inline; margin-top:-5%; margin-right: 14%;height: 200px; width: 280px;border-radius: 0 150px 0 150px;"src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDJWKSJWo1FV5JP47no4Zs8Bmj-6eExy7nEQ&usqp=CAU">
+        <!--local folder-->
+        <h2 >Local Folders </h2>
+        <button  style = "filter:brightness(110%); "><a href = "C:\Users\haowe\Downloads" target="_blank"> <font size="+2" style="color:black">Downloads</font> </a> </button>
+        <!--<button id ="mybutton"> Click me </button> 
+        <script>
+         let b = document.querySelector("#mybutton"); 
+         b.onclick = function(){
+              console.log("Thanks for clicking me!");
+            }; 
+        b.addEventListener("click", () => { console.log(" Thanks again!"); }); 
+        </script>-->
+       <!--bottom image-->
+        <br>
+        <img style="display:inline-block; margin: 90px 0 0 0; width: 600px; height: 300px; border-radius: 35px; border: solid black " src= "https://wallpapercave.com/wp/wp4446019.jpg">
+        
+    </body>
+</html>
