@@ -16,13 +16,14 @@ import { CoursesService } from './courses.service';
         [class.active]="isActive" 
         [style.backgroundColor]="isActive ? 'blue' : 'white'" 
         (click)="onSave($event)">Save</button>
-        <input (keyup.enter)="onKeyUp($event)">
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/>
         `
 })
 export class CoursesComponent{
     title = "List of courses";
     isActive = true;
     courses;
+    email = "me@example.com";
     imageURL = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rengar_0.jpg";
     constructor(service: CoursesService){ 
         this.courses = service.getCourses();
@@ -30,7 +31,7 @@ export class CoursesComponent{
     onSave($event){
         console.log("Button was clicked", $event);
     }
-    onKeyUp($event){
-        console.log($event.target.value);
+    onKeyUp(){
+        //console.log(this.email);
     }
 }
