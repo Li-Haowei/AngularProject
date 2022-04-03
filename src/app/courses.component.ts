@@ -12,7 +12,11 @@ import { CoursesService } from './courses.service';
                 {{course}}
             </li>
         </ul>
-        <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'white'" (click)="onSave($event)">Save</button>
+        <button class="btn btn-primary" 
+        [class.active]="isActive" 
+        [style.backgroundColor]="isActive ? 'blue' : 'white'" 
+        (click)="onSave($event)">Save</button>
+        <input (keyup.enter)="onKeyUp($event)">
         `
 })
 export class CoursesComponent{
@@ -25,5 +29,8 @@ export class CoursesComponent{
     }
     onSave($event){
         console.log("Button was clicked", $event);
+    }
+    onKeyUp($event){
+        console.log($event.target.value);
     }
 }
