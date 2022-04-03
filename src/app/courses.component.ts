@@ -9,7 +9,7 @@ import { CoursesService } from './courses.service';
         <h3>{{ number |number}}</h3>
         <h3>{{ float |number:'1.2-2'}}</h3>
         <h3>{{ number |currency}}</h3>
-        <p>{{text|summary : 101}}</p>
+        <p>{{text|summary :101}}</p>
         <img src="{{imageURL}}">
         <ul>
             <li *ngFor="let course of courses">
