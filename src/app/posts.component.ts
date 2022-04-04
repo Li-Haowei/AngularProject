@@ -12,7 +12,13 @@ import { Component } from '@angular/core'
     <ul class="list-group">
         <li *ngFor="let post of posts"
         class="list">
+        <button 
+        (click)= "updatePost(post)"
+        class = "btn btn-default btn-sm">Update</button>
         {{post.title}}
+        <button 
+        (click)= "deletePost(post)"
+        class = "btn btn-default btn-sm">Delete</button>
     </li>
     </ul>`
 })
@@ -40,5 +46,22 @@ export class PostsComponent {
         })
     }
     //http put: update data
+    updatePost(post){
+        //patch only to one property
+        this.http.patch(this.url + '/' + post['id'], JSON.stringify({isRead : true}))
+        .subscribe(response => {
+            console.log(response);
+        });
+        //put
+        //this.http.patch(this.url, JSON.stringify(post));
+    }
     //http delete: delete data
+    deletePost(post){
+        //no body needed
+        this.http.delete(this.url + '/' + post['id'])
+        .subscribe(response =>{
+            let index = this.posts.indexOf(post);
+            this.posts.splice(index,1);
+        });
+    }
 }
