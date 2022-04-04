@@ -1,5 +1,5 @@
-import {HttpClient} from '@angular/common/http'
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { PostService } from './services/post.service';
 
 
 @Component({
@@ -14,21 +14,24 @@ import { Component } from '@angular/core'
         class="list">
         <button 
         (click)= "updatePost(post)"
-        class = "btn btn-default btn-sm">Update</button>
+        class = "btn btn-primary btn-sm">Update</button>
         {{post.title}}
         <button 
         (click)= "deletePost(post)"
-        class = "btn btn-default btn-sm">Delete</button>
+        class = "btn btn-primary btn-sm">Delete</button>
     </li>
     </ul>`
 })
-export class PostsComponent {
+export class PostsComponent implements OnInit{
     posts: any[];
-    private url = 'https://jsonplaceholder.typicode.com/posts';
-    constructor(private http: HttpClient){
+
+    constructor(private service:PostService){
         this.posts = [];
+    }
+
+    ngOnInit(): void {
         //http get: Get data
-        http.get(this.url)
+        this.service.getPosts()
         .subscribe(response =>{
             this.posts = response as any[];
         });
@@ -36,10 +39,7 @@ export class PostsComponent {
     createPost(input: HTMLInputElement){
         let post = {title: input.value}
         input.value = '';
-        //http post: Create data
-        //first input server, second input json file
-        this.http.post(this.url, JSON.stringify(post))
-        .subscribe(response =>{
+        this.service.createPost(post).subscribe(response =>{
             post['id'] = response['id'];
             this.posts.splice(0,0,post);
             
@@ -48,8 +48,7 @@ export class PostsComponent {
     //http put: update data
     updatePost(post){
         //patch only to one property
-        this.http.patch(this.url + '/' + post['id'], JSON.stringify({isRead : true}))
-        .subscribe(response => {
+        this.service.updatePost(post).subscribe(response => {
             console.log(response);
         });
         //put
@@ -58,7 +57,7 @@ export class PostsComponent {
     //http delete: delete data
     deletePost(post){
         //no body needed
-        this.http.delete(this.url + '/' + post['id'])
+        this.service.deletePost(post)
         .subscribe(response =>{
             let index = this.posts.indexOf(post);
             this.posts.splice(index,1);

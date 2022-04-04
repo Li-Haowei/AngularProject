@@ -8,6 +8,7 @@ import { PostsComponent } from './posts.component';
 import { CoursesService } from './courses.service';
 import { SummaryPipe } from 'src/summary.pipe';
 import {HttpClientModule} from '@angular/common/http';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {HttpClientModule} from '@angular/common/http';
   
   ],
   providers: [
+    PostService,
     CoursesService,
     HttpClientModule
   ],
