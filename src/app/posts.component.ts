@@ -8,7 +8,6 @@ import { PostService } from './services/post.service';
     <input 
     (keyup.enter) = "createPost(input)" #input
     type="text" class = "form-control">
-
     <ul class="list-group">
         <li *ngFor="let post of posts"
         class="list">
@@ -51,8 +50,6 @@ export class PostsComponent implements OnInit{
         this.service.updatePost(post).subscribe(response => {
             console.log(response);
         });
-        //put
-        //this.http.patch(this.url, JSON.stringify(post));
     }
     //http delete: delete data
     deletePost(post){
