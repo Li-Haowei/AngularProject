@@ -4,3 +4,12 @@
 body {
     padding: 20px;;
 }
+h1{
+    text-align: center;
+}
+model-viewer {
+    position: relative;
+    float: left;
+    height: 50vw;
+    width: 50%;
+  }
