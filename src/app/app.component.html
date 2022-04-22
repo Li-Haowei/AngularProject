@@ -1,3 +1,24 @@
-<h1>Angular</h1>
-<courses>Courses</courses>
-<app-posts></app-posts>
+<h1>My Angular Project</h1>
+
+<!--Imports a model-viewer JavaScript code -->
+<!-- 3D object-->
+
+<model-viewer
+  camera-controls
+  [attr.camera-orbit]="camera_orbit"
+  [attr.src]="src"
+  alt="A 3D model of an teddy"
+  data-js-focus-visible=""
+  ar-status="not-presenting"
+>
+</model-viewer>
+
+<model-viewer
+  camera-controls
+  camera-orbit="45deg 55deg 2.5m"
+  src="assets/Astronaut.glb"
+  alt="A 3D model of an astronaut"
+  data-js-focus-visible=""
+  ar-status="not-presenting"
+>
+</model-viewer>
