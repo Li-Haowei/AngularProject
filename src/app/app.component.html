@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
+<h1>My Angular Project</h1>
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  name = `Angular`;
-  
-  camera_orbit = '0deg 90deg 100m';
-  src = "assets/teddy.glb";//'https://modelviewer.dev/shared-assets/models/Astronaut.glb';//
-}
+<!--Imports a model-viewer JavaScript code -->
+<!-- 3D object-->
+
+<model-viewer
+  camera-controls
+  [attr.camera-orbit]="camera_orbit"
+  [attr.src]="src"
+  alt="A 3D model of an teddy"
+  data-js-focus-visible=""
+  ar-status="not-presenting"
+>
+</model-viewer>
+
+<model-viewer
+  camera-controls
+  camera-orbit="45deg 55deg 2.5m"
+  src="assets/Astronaut.glb"
+  alt="A 3D model of an astronaut"
+  data-js-focus-visible=""
+  ar-status="not-presenting"
+>
+</model-viewer>
